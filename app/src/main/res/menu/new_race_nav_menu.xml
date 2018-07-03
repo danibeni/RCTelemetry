@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".features.newrace.NewRaceActivity">
+    <item
+        android:id="@+id/newRaceActionRefresh"
+        android:icon="@drawable/ic_refresh"
+        android:title="@string/action_refresh"
+        app:showAsAction="ifRoom|withText"
+        />
+    <item
+        android:id="@+id/newRaceActionNext"
+        android:icon="@drawable/ic_next"
+        android:title="@string/action_next"
+        app:showAsAction="ifRoom|withText"
+        />
+</menu>
