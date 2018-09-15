@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item android:id="@+id/drawer_nav_races"
+            android:icon="@drawable/ic_races"
+            android:title="@string/drawer_nav_menu_races" />
+        <item android:id="@+id/drawer_nav_circuits"
+            android:icon="@drawable/ic_circuits_closed"
+            android:title="@string/drawer_nav_menu_circuits" />
+    </group>
+</menu>

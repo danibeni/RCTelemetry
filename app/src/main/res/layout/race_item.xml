@@ -21,26 +21,26 @@
     android:id="@+id/race_row"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/border_race_item"
-    android:paddingBottom="@dimen/list_item_padding"
-    android:paddingLeft="@dimen/list_item_padding"
-    android:paddingRight="@dimen/list_item_padding"
-    android:paddingTop="@dimen/list_item_padding"
-    android:layout_marginBottom="@dimen/list_item_margin"
+    android:background="@drawable/border_item"
+    android:paddingBottom="@dimen/list_item_padding_4"
+    android:layout_marginBottom="@dimen/list_item_margin_4"
     android:layout_gravity="center">
 
     <android.support.v7.widget.CardView
         android:id="@+id/raceCV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        cardview:cardCornerRadius="6dp">
+        cardview:cardCornerRadius="0dp">
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/raceCL"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:elevation="4dp"
-            android:padding="16dp">
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp">
 
             <TextView
                 android:id="@+id/circuitNameTV"
@@ -49,9 +49,20 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:hint="@string/new_race_circuit_hint"
-                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                cardview:layout_constraintBottom_toBottomOf="@+id/raceTimeTV" />
+
+            <TextView
+                android:id="@+id/raceTimeTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                cardview:layout_constraintEnd_toEndOf="parent"
+                cardview:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/driverNameTV"
@@ -69,7 +80,6 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:hint="@string/new_race_date_hint"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@+id/driverNameTV"

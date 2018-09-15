@@ -16,7 +16,7 @@ class RacesAdapter @Inject constructor() : RecyclerView.Adapter<RacesAdapter.Vie
         notifyDataSetChanged()
     }
 
-    internal var clickListener: (RaceView, Navigator.Extras) -> Unit = { _, _ -> }
+    internal var clickListener: (RaceView) -> Unit = { }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
             ViewHolder(parent.inflate(R.layout.race_item))
@@ -27,9 +27,12 @@ class RacesAdapter @Inject constructor() : RecyclerView.Adapter<RacesAdapter.Vie
     override fun getItemCount() = collection.size
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(raceView: RaceView, clickListener: (RaceView, Navigator.Extras) -> Unit) {
+        fun bind(raceView: RaceView, clickListener: (RaceView) -> Unit) {
             itemView.circuitNameTV.text = raceView.circuit
-            itemView.setOnClickListener { clickListener(raceView, Navigator.Extras(itemView.circuitNameTV)) }
+            itemView.driverNameTV.text = raceView.driver
+            itemView.raceTimeTV.text = raceView.raceTime
+            itemView.raceDateTV.text = raceView.raceDate
+            itemView.setOnClickListener { clickListener(raceView) }
         }
     }
 }

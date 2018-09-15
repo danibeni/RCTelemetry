@@ -29,12 +29,12 @@ class VehicleSignalDrawingView(context: Context, attrs: AttributeSet) : View(con
     // Setup paint with color and stroke styles
     private fun setupPaint() {
         drawPaint = Paint()
-        drawPaint!!.setColor(paintColor)
-        drawPaint!!.setAntiAlias(true)
-        drawPaint!!.setStrokeWidth(5F)
-        drawPaint!!.setStyle(Paint.Style.STROKE)
-        drawPaint!!.setStrokeJoin(Paint.Join.ROUND)
-        drawPaint!!.setStrokeCap(Paint.Cap.ROUND)
+        drawPaint.setColor(paintColor)
+        drawPaint.setAntiAlias(true)
+        drawPaint.setStrokeWidth(5F)
+        drawPaint.setStyle(Paint.Style.STROKE)
+        drawPaint.setStrokeJoin(Paint.Join.ROUND)
+        drawPaint.setStrokeCap(Paint.Cap.ROUND)
     }
 
     override fun onDraw(canvas: Canvas?) {

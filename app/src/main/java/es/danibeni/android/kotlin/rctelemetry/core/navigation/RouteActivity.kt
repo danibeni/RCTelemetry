@@ -18,6 +18,7 @@ package es.danibeni.android.kotlin.rctelemetry.core.navigation
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import es.danibeni.android.kotlin.rctelemetry.AndroidApplication
+import es.danibeni.android.kotlin.rctelemetry.R
 import es.danibeni.android.kotlin.rctelemetry.core.di.ApplicationComponent
 import javax.inject.Inject
 
@@ -30,8 +31,10 @@ class RouteActivity : AppCompatActivity() {
     @Inject internal lateinit var navigator: Navigator
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
         appComponent.inject(this)
         navigator.showMain(this)
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
     }
 }

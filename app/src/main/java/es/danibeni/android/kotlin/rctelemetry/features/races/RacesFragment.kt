@@ -1,8 +1,15 @@
 package es.danibeni.android.kotlin.rctelemetry.features.races
 
+import android.app.SearchManager
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.support.annotation.StringRes
 import android.support.v7.widget.StaggeredGridLayoutManager
+import android.util.Log
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import es.danibeni.android.kotlin.rctelemetry.R
 import es.danibeni.android.kotlin.rctelemetry.core.exception.Failure
@@ -13,6 +20,7 @@ import es.danibeni.android.kotlin.rctelemetry.core.extension.viewModel
 import es.danibeni.android.kotlin.rctelemetry.core.extension.visible
 import es.danibeni.android.kotlin.rctelemetry.core.navigation.Navigator
 import es.danibeni.android.kotlin.rctelemetry.core.platform.BaseFragment
+import es.danibeni.android.kotlin.rctelemetry.data.Lap
 import kotlinx.android.synthetic.main.races_fragment.*
 import javax.inject.Inject
 
@@ -44,12 +52,13 @@ class RacesFragment : BaseFragment() {
 
 
     private fun initializeView() {
+        setHasOptionsMenu(true)
+
         raceList.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
         raceList.adapter = racesAdapter
-        racesAdapter.clickListener = {
-            race, navigationExtras ->
-            //navigator.showMovieDetails(activity!!, movie, navigationExtras)
-            }
+        racesAdapter.clickListener = { race ->
+            navigator.raceDetails(activity!!, race.id)
+        }
         setupFab()
     }
 
@@ -61,6 +70,23 @@ class RacesFragment : BaseFragment() {
             }
         }
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+        if (inflater != null) {
+            inflater.inflate(R.menu.races_nav_menu, menu)
+        }
+
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle presses on the action bar menu items
+        when (item.itemId) {
+
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
     private fun loadRacesList() {
         noRaces.invisible()
         raceList.visible()
@@ -80,16 +106,8 @@ class RacesFragment : BaseFragment() {
     }
 
     private fun renderFailure(@StringRes message: Int) {
-        //raceList.invisible()
-        //noRaces.visible()
-        notify(message)
-        var racesTest : MutableList<RaceView> = mutableListOf<RaceView>()
-        racesTest.add(RaceView("1", "Circuito 1"))
-        racesTest.add(RaceView("2", "Circuito 2"))
-        racesTest.add(RaceView("3", "Circuito 3"))
-        racesTest.add(RaceView("4", "Circuito 4"))
-        racesTest.add(RaceView("5", "Circuito 5"))
-        racesTest.add(RaceView("6", "Circuito 6"))
-        racesAdapter.collection = racesTest.orEmpty()
+        raceList.invisible()
+        noRaces.visible()
+        //notify(message)
     }
 }

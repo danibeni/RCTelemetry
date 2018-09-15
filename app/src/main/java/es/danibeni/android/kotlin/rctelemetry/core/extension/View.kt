@@ -85,7 +85,7 @@ fun ImageView.loadUrlAndPostponeEnterTransition(url: String, activity: FragmentA
 fun Context.showDialog(cancelable: Boolean = false, cancelableTouchOutside: Boolean = false, builderFunction: AlertDialog.Builder.() -> Any) {
     val builder = AlertDialog.Builder(this)
     builder.builderFunction()
-    val dialog = builder.create();
+    val dialog = builder.create()
 
     dialog.setCancelable(cancelable)
     dialog.setCanceledOnTouchOutside(cancelableTouchOutside)
@@ -93,15 +93,15 @@ fun Context.showDialog(cancelable: Boolean = false, cancelableTouchOutside: Bool
 }
 
 fun AlertDialog.Builder.positiveButton(text: String = "OK", handleClick: (i: Int) -> Unit = {}) {
-    this.setPositiveButton(text, { dialogInterface, i -> handleClick(i) })
+    this.setPositiveButton(text, { _, i -> handleClick(i) })
 }
 
 fun AlertDialog.Builder.negativeButton(text: String = "CANCEL", handleClick: (i: Int) -> Unit = {}) {
-    this.setNegativeButton(text, { dialogInterface, i -> handleClick(i) })
+    this.setNegativeButton(text, { _, i -> handleClick(i) })
 }
 
 fun AlertDialog.Builder.neutralButton(text: String, handleClick: (i: Int) -> Unit = {}) {
-    this.setNeutralButton(text, { dialogInterface, i -> handleClick(i) })
+    this.setNeutralButton(text, { _, i -> handleClick(i) })
 }
 
 private class ImageViewBaseTarget (var imageView: ImageView?, var activity: FragmentActivity?) : BaseTarget<Drawable>() {

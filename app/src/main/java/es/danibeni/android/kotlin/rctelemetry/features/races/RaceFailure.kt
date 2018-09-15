@@ -19,5 +19,9 @@ import es.danibeni.android.kotlin.rctelemetry.core.exception.Failure.FeatureFail
 
 class RaceFailure {
     class ListNotAvailable: FeatureFailure()
+    class RaceNotFound: FeatureFailure()
+    class RaceDeleteFailed: FeatureFailure()
+    class RaceUpdateFailed: FeatureFailure()
+    class CircuitIDNotFound: FeatureFailure()
 }
 

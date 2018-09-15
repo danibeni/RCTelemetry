@@ -20,7 +20,12 @@ import android.arch.lifecycle.ViewModelProvider
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
+import es.danibeni.android.kotlin.rctelemetry.features.circuitdetails.CircuitDetailsViewModel
+import es.danibeni.android.kotlin.rctelemetry.features.circuits.CircuitsViewModel
 import es.danibeni.android.kotlin.rctelemetry.features.newrace.NewRaceViewModel
+import es.danibeni.android.kotlin.rctelemetry.features.newrace.ReconnaissanceLapViewModel
+import es.danibeni.android.kotlin.rctelemetry.features.newrace.RunRaceViewModel
+import es.danibeni.android.kotlin.rctelemetry.features.racedetails.RaceDetailsViewModel
 import es.danibeni.android.kotlin.rctelemetry.features.races.RacesViewModel
 
 @Module
@@ -35,6 +40,33 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
+    @ViewModelKey(CircuitsViewModel::class)
+    abstract fun bindsCircuitsViewModel(circuitsViewModel: CircuitsViewModel): ViewModel
+
+    @Binds
+    @IntoMap
     @ViewModelKey(NewRaceViewModel::class)
-    abstract fun bindsAddRacesViewModel(newRacesViewModel: NewRaceViewModel): ViewModel
+    abstract fun bindsNewRacesViewModel(newRacesViewModel: NewRaceViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(ReconnaissanceLapViewModel::class)
+    abstract fun bindsReconnaissanceLapViewModel(reconnaissanceLapViewModel: ReconnaissanceLapViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(RunRaceViewModel::class)
+    abstract fun bindsRunRaceViewModel(runRaceViewModel: RunRaceViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(RaceDetailsViewModel::class)
+    abstract fun bindsRaceDetailsViewModel(raceDetailsModelView: RaceDetailsViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(CircuitDetailsViewModel::class)
+    abstract fun bindsCircuitDetailsViewModel(circuitDetailsModelView: CircuitDetailsViewModel): ViewModel
+
+
 }

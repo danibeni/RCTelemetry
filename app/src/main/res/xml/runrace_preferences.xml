@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="@string/run_race_pref_vehicle">
+    <SwitchPreference
+        android:key="@string/run_race_pref_vehicle_show_info_key"
+        android:title="@string/run_race_pref_vehicle_show_info_pref_title"
+        android:summary="@string/run_race_pref_vehicle_show_info_pref_summary"
+        android:defaultValue="true" />
+    </PreferenceCategory>
+</PreferenceScreen>

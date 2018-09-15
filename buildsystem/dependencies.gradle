@@ -18,6 +18,8 @@ ext {
     javaxAnnotations_version = '1.0'
     javaxInject_version = '1'
     room_version = '1.0.0'
+    graphview_version = '4.2.2'
+    gson_version = '2.8.5'
 
     //Unit Testing
     robolectric_version = '3.8'
@@ -37,6 +39,7 @@ ext {
             kotlinCoroutines       : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_version",
             kotlinCoroutinesAndroid: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_version",
             appCompat              : "com.android.support:appcompat-v7:$appCompat_version",
+            preferences            : "com.android.support:preference-v14:$appCompat_version",
             cardView               : "com.android.support:cardview-v7:$appCompat_version",
             recyclerView           : "com.android.support:recyclerview-v7:$appCompat_version",
             design                 : "com.android.support:design:$appCompat_version",
@@ -51,6 +54,8 @@ ext {
             javaxInject            : "javax.inject:javax.inject:$javaxInject_version",
             roomCompiler           : "android.arch.persistence.room:compiler:$room_version",
             room                   : "android.arch.persistence.room:runtime:$room_version",
+            graphview              : "com.jjoe64:graphview:$graphview_version",
+            gson                   : "com.google.code.gson:gson:$gson_version"
 
     ]
 

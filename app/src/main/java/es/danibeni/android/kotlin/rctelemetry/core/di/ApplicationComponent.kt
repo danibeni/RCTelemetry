@@ -19,8 +19,13 @@ import es.danibeni.android.kotlin.rctelemetry.AndroidApplication
 import es.danibeni.android.kotlin.rctelemetry.core.di.viewmodel.ViewModelModule
 import es.danibeni.android.kotlin.rctelemetry.core.navigation.RouteActivity
 import dagger.Component
+import es.danibeni.android.kotlin.rctelemetry.core.platform.BaseActivity
+import es.danibeni.android.kotlin.rctelemetry.features.circuits.CircuitsFragment
 import es.danibeni.android.kotlin.rctelemetry.features.newrace.NewRaceFragment
 import es.danibeni.android.kotlin.rctelemetry.features.newrace.ReconnaissanceLapFragment
+import es.danibeni.android.kotlin.rctelemetry.features.newrace.RunRaceFragment
+import es.danibeni.android.kotlin.rctelemetry.features.circuitdetails.CircuitDetailsFragment
+import es.danibeni.android.kotlin.rctelemetry.features.racedetails.RaceDetailsFragment
 import es.danibeni.android.kotlin.rctelemetry.features.races.RacesFragment
 import javax.inject.Singleton
 
@@ -29,8 +34,12 @@ import javax.inject.Singleton
 interface ApplicationComponent {
     fun inject(application: AndroidApplication)
     fun inject(routeActivity: RouteActivity)
+    fun inject(baseActivity: BaseActivity)
     fun inject(racesFragment: RacesFragment)
+    fun inject(circuitsFragment: CircuitsFragment)
     fun inject(newRaceFragment: NewRaceFragment)
     fun inject(reconnaissancLapFragment: ReconnaissanceLapFragment)
-
+    fun inject(runRaceFragment: RunRaceFragment)
+    fun inject(raceDetailsFragment: RaceDetailsFragment)
+    fun inject(circuitDetailsFragment: CircuitDetailsFragment)
 }

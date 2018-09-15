@@ -20,6 +20,7 @@ import es.danibeni.android.kotlin.rctelemetry.AndroidApplication
 import dagger.Module
 import dagger.Provides
 import es.danibeni.android.kotlin.rctelemetry.core.constants.Constants
+import es.danibeni.android.kotlin.rctelemetry.data.CircuitsRepository
 import es.danibeni.android.kotlin.rctelemetry.data.local.RCTelemetryDatabase
 import es.danibeni.android.kotlin.rctelemetry.data.RacesRepository
 import es.danibeni.android.kotlin.rctelemetry.data.VehiclesRepository
@@ -36,4 +37,9 @@ class ApplicationModule(private val application: AndroidApplication) {
     }
 
     @Provides @Singleton fun provideVehiclesRepository(dataSource: VehiclesRepository.Network): VehiclesRepository = dataSource
+
+    @Provides @Singleton fun provideCircuitsRepository(context: Context) : CircuitsRepository {
+        val database = RCTelemetryDatabase.getInstance(context)
+        return CircuitsRepository.LocalDataSource(database.circuitsDao())
+    }
 }

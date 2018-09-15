@@ -72,6 +72,7 @@ dependencies {
     def developmentDependencies = rootProject.ext.development
 
     //Compile time dependencies
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     kapt applicationDependencies.archComponentsCompiler
     kapt applicationDependencies.daggerCompiler
     kapt applicationDependencies.roomCompiler
@@ -92,9 +93,9 @@ dependencies {
     implementation applicationDependencies.glide
     implementation applicationDependencies.dagger
     implementation applicationDependencies.room
-    implementation 'com.jjoe64:graphview:4.2.2'
-
-
+    implementation applicationDependencies.graphview
+    implementation applicationDependencies.gson
+    implementation applicationDependencies.preferences
 
     //Unit/Integration tests dependencies
     testImplementation unitTestDependencies.kotlin

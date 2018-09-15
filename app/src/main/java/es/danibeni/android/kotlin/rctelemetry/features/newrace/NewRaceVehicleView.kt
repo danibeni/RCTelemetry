@@ -4,9 +4,9 @@ import android.os.Parcel
 import es.danibeni.android.kotlin.rctelemetry.core.platform.KParcelable
 import es.danibeni.android.kotlin.rctelemetry.core.platform.parcelableCreator
 
-data class VehicleView (val name: String, val addressId: String, var status: String): KParcelable {
+data class NewRaceVehicleView (val name: String, val addressId: String, var status: String): KParcelable {
     companion object {
-        @JvmField val CREATOR = parcelableCreator(::VehicleView)
+        @JvmField val CREATOR = parcelableCreator(::NewRaceVehicleView)
     }
 
     constructor(parcel: Parcel) : this(parcel.readString(), parcel.readString(), parcel.readString())

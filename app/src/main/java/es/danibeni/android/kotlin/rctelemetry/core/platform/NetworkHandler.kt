@@ -61,7 +61,7 @@ class NetworkHandler
             ipAddress = Integer.reverseBytes(ipAddress)
         }
 
-        var testIpByteArray = BigInteger.valueOf(ipAddress.toLong()).toByteArray()
+        val testIpByteArray = BigInteger.valueOf(ipAddress.toLong()).toByteArray()
         Log.e(TAG, "TestIpByteArray: " + testIpByteArray)
 
         for (i in lowest..highest) {
@@ -82,5 +82,4 @@ class NetworkHandler
         return connectedDevicesIP
     }
 
-    val wifiNetworkChangeReceiver get() = WifiNetworkChangeReceiver()
 }

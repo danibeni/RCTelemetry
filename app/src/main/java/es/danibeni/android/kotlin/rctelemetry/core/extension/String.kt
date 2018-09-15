@@ -15,4 +15,19 @@
  */
 package es.danibeni.android.kotlin.rctelemetry.core.extension
 
+import java.text.SimpleDateFormat
+import java.util.*
+import java.util.concurrent.TimeUnit
+
 fun String.Companion.empty() = ""
+
+fun String.Companion.minutesFormat(millis: Long) = String.format("%02d:%02d.%01d", TimeUnit.MILLISECONDS.toMinutes(millis),
+        TimeUnit.MILLISECONDS.toSeconds(millis) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)),
+        TimeUnit.MILLISECONDS.toMillis(millis) - TimeUnit.SECONDS.toMillis(TimeUnit.MILLISECONDS.toSeconds(millis)))
+
+fun String.Companion.simpleDateAndTime(date: Date): String {
+    val simpleDate = SimpleDateFormat("dd-MM-yyyy HH:mm")
+    return simpleDate.format(date)
+}
+
+fun String.Companion.oneDecimalFormat(number: Float) = String.format("%.1f", number)

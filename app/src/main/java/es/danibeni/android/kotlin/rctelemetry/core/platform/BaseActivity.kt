@@ -15,13 +15,22 @@
  */
 package es.danibeni.android.kotlin.rctelemetry.core.platform
 
-import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
+import android.support.design.widget.NavigationView
+import android.support.v4.widget.DrawerLayout
+import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
+import android.view.MenuItem
+import es.danibeni.android.kotlin.rctelemetry.AndroidApplication
+import es.danibeni.android.kotlin.rctelemetry.R
 import es.danibeni.android.kotlin.rctelemetry.R.id
 import es.danibeni.android.kotlin.rctelemetry.R.layout
+import es.danibeni.android.kotlin.rctelemetry.core.di.ApplicationComponent
 import es.danibeni.android.kotlin.rctelemetry.core.extension.inTransaction
+import es.danibeni.android.kotlin.rctelemetry.core.navigation.Navigator
 import kotlinx.android.synthetic.main.toolbar.toolbar
+import javax.inject.Inject
 
 /**
  * Base Activity class with helper methods for handling fragment transactions and back button
@@ -29,14 +38,60 @@ import kotlinx.android.synthetic.main.toolbar.toolbar
  *
  * @see AppCompatActivity
  */
-abstract class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
+    private val appComponent: ApplicationComponent by lazy(mode = LazyThreadSafetyMode.NONE) {
+        (application as AndroidApplication).appComponent
+    }
+
+    @Inject
+    internal lateinit var navigator: Navigator
+
+    private lateinit var drawer: DrawerLayout
+    private lateinit var toggle: ActionBarDrawerToggle
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        appComponent.inject(this)
         setContentView(layout.base_activity)
         setSupportActionBar(toolbar)
 
+        drawer = findViewById(R.id.BaseActivityDrawerL)
+
+        toggle = ActionBarDrawerToggle(this, drawer, toolbar, R.string.drawer_nav_open_message, R.string.drawer_nav_close_message)
+        drawer.addDrawerListener(toggle)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeButtonEnabled(true)
+
+        val navigationView: NavigationView = findViewById(R.id.BaseActivityNavigationV)
+        navigationView.setNavigationItemSelectedListener(this)
+
         addFragment(savedInstanceState)
+    }
+
+    override fun onPostCreate(savedInstanceState: Bundle?) {
+        super.onPostCreate(savedInstanceState)
+        toggle.syncState()
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration?) {
+        super.onConfigurationChanged(newConfig)
+        toggle.onConfigurationChanged(newConfig)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if (toggle.onOptionsItemSelected(item)) {
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.drawer_nav_races -> navigator.showMain(this)
+            R.id.drawer_nav_circuits -> navigator.showCircuits(this)
+        }
+        return true
     }
 
     override fun onBackPressed() {

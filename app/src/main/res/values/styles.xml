@@ -6,6 +6,14 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowActivityTransitions">true</item>
         <item name="android:windowContentTransitions">true</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
+    </style>
+
+    <!-- The launcher theme. It sets the main window background to the background_splash drawable -->
+    <style name="AppTheme.SplashScreenTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/background_splash</item>
+    <!-- Optional, on Android 5+ you can modify the colorPrimaryDark color to match the windowBackground color for further branding-->
+    <!-- <item name="colorPrimaryDark">@android:color/white</item> -->
     </style>
 
     <style name="AppTheme.Translucent" parent="AppTheme">
@@ -25,8 +33,9 @@
     </style>
 
     <style name="BaseToolbarTheme">
-        <item name="android:textColorPrimary">@color/colorTextSecondary</item>
-        <item name="android:textColorSecondary">@color/colorTextPrimary</item>
+        <item name="android:textColorPrimary">@color/colorTextToolbarSecondary</item>
+        <item name="android:textColorSecondary">@color/colorTextToolbarSecondary</item>
+        <item name="android:gravity">center</item>
     </style>
 
     <style name="CustomTitleTextAppearance" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
@@ -48,17 +57,59 @@
         <item name="android:background">@drawable/ripple_effect</item>
         <item name="android:textColor">@color/colorTextIcon</item>
     </style>
+
+    <style name="BaseButtonDark" parent="BaseButton">
+        <item name="android:background">@drawable/ripple_effect_dark</item>
+    </style>
+
+    <style name="CircuitItem" parent="TextAppearance.AppCompat.Large">
+        <item name="android:textSize">20sp</item>
+    </style>
+
     <style name="Chronometer" parent="TextAppearance.AppCompat.Large">
         <item name="android:textSize">60sp</item>
     </style>
+
     <style name="Instructions" parent="TextAppearance.AppCompat.Medium">
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/colorTextSecondary</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
     </style>
+
     <style name="Instructions.Title" parent="Instructions">
         <item name="android:gravity">center</item>
     </style>
+
     <style name="Instructions.Text" parent="Instructions">
         <item name="android:layout_margin">8dp</item>
+    </style>
+
+    <style name="SectionTitle" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@color/colorTextPrimary</item>
+    </style>
+
+    <style name="SectionLabel" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="SectionValue" parent="TextAppearance.AppCompat.Medium">
+
+    </style>
+
+    <style name="SectionValueBold" parent="SectionValue">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="LapChrono" parent="TextAppearance.AppCompat.Large">
+        <item name="android:textSize">25sp</item>
+    </style>
+
+    <style name="RaceChrono" parent="TextAppearance.AppCompat.Large">
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="Countdown" parent="TextAppearance.AppCompat.Large">
+        <item name="android:textSize">150sp</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
     </style>
 </resources>

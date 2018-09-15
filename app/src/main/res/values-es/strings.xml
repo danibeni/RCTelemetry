@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2015 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <string name="app_name">Telemetría RC</string>
+    <string name="chronometer">Cronómetro</string>
+
+    <string name="races_title">Carreras</string>
+    <string name="races_no_races">¡No hay carreras disponibles!</string>
+    <string name="races_press_plus_icon">Pulse el icono + para disputar una nueva carrera</string>
+
+    <string name="circuits_title">Circuitos</string>
+    <string name="circuits_no_circuits">¡No hay circuitos disponibles!</string>
+    <string name="circuits_press_plus_icon">Pulse el icono + para añadir un nuevo circuito</string>
+    <string name="circuits_circuit_name">Nombre de Circuito</string>
+    <string name="circuits_circuit_city">Ciudad de Circuito</string>
+    <string name="circuits_circuit_lenght">Longitud aproximada del circuito</string>
+    <string name="circuits_circuit_lenght_unit">metros</string>
+    <string name="circuits_image_desc">Imagen identificativa de circuitos</string>
+
+    <string name="action_refresh">Refrescar</string>
+    <string name="action_enable">Habilitar</string>
+    <string name="action_cancel">Cancelar</string>
+    <string name="action_ok">OK</string>
+    <string name="action_back">Atrás</string>
+    <string name="action_next">Siguiente</string>
+    <string name="action_close">Cerrar</string>
+    <string name="action_delete">Eliminar</string>
+    <string name="action_done">Hecho</string>
+    <string name="action_yes">Sí</string>
+    <string name="action_no">No</string>
+    <string name="action_circuits">Circuitos</string>
+    <string name="action_races">Carreras</string>
+    <string name="action_wifi_settings">Configuración Wifi</string>
+
+    <string name="drawer_nav_open_message">Navegación Lateral ABIERTA</string>
+    <string name="drawer_nav_close_message">Navegación Lateral CERRADA</string>
+    <string name="drawer_nav_menu_races">CARRERAS</string>
+    <string name="drawer_nav_menu_circuits">CIRCUITOS</string>
+    <string name="drawer_nav_header_title">Telemetría RC</string>
+    <string name="drawer_nav_header_descr">Navega entre tus carreras y circuitos</string>
+    <string name="drawer_nav_image_descr">Imagen de logo TelemetríaRC</string>
+
+    <string name="failure_network_connection">Sin conexión de red.</string>
+    <string name="failure_server_error">Error de servidor</string>
+    <string name="failure_races_list_unavailable">Carreras NO disponibles.</string>
+    <string name="failure_circuits_list_unavailable">Circuitos NO diponibles.</string>
+
+    <string name="new_race_title">Nueva Carrera</string>
+    <string name="new_race_circuit_hint">Circuito de Carreras</string>
+    <string name="new_race_circuits_available">Circuitos Disponibles</string>
+    <string name="new_race_driver_hint">Nombre del conductor</string>
+    <string name="new_race_date_hint">Fecha de la carrera</string>
+    <string name="empty_race_message">El campo Circuito de Carreras no puede estar vacío</string>
+    <string name="new_race_loading_vehicles">Cargando vehiculos disponibles</string>
+    <string name="new_race_available_vehicles">Vehículos disponibles</string>
+    <string name="new_race_vehicle_available">Disponible</string>
+    <string name="new_race_vehicle_blinking">Parpadeando</string>
+    <string name="new_race_vehicle_selected">Seleccionado</string>
+    <string name="new_race_vehicle_no_response">Sin respuesta</string>
+    <string name="new_race_vehicle_name">Nombre de Vehículo</string>
+    <string name="new_race_vehicle_address">Dirección IP de Vehículo</string>
+    <string name="new_race_no_connection_rctelemetry_network">Sin conexión a red RCTELEMTRY</string>
+    <string name="new_race_no_connection_rctelemetry_network_message">
+        Por favor, verifique que el dispositivo llamado RCTELEMETRY_HOME está encendido y abra
+        la ventana de CONFIGURACION WIFI para conectarse a su red.
+    </string>
+    <string name="new_race_provide_circuit">Debe proporcionar un nombre de circuito</string>
+    <string name="new_race_circuit_lenght_must_be_numeric">La longitud del circuito debe ser numérico</string>
+    <string name="new_race_not_connected_to_home">Problemas al conectase a la red RCTELEMETRY. Pulse el botón REFRESCAR para intentarlo de nuevo.</string>
+    <string name="new_race_no_vehicle_detected">No se encontró ningún vehículo conectado</string>
+    <string name="new_race_no_vehicle_detected_message">
+        Verifique que el módulo RCTELEMETRY localizado en el vehículo está encendido y pulse el botón REFRESCAR.</string>
+    <string name="new_race_message_box">Caja de Mensaje con lista de vehículos</string>
+
+    <string name="rec_lap_title">Vuelta Reconocimiento</string>
+    <string name="rec_lap_timer">00:00.0</string>
+    <string name="rec_lap_start">INICIO</string>
+    <string name="rec_lap_stop">FIN</string>
+    <string name="rec_lap_pref">Ajustes</string>
+    <string name="rec_lap_pref_activity_title">Preferencias vuelta de reconocimento </string>
+    <string name="rec_lap_pref_instructions">Instrucciones</string>
+    <string name="rec_lap_show_instructions_pref_key">REC_LAP_SHOW_INSTRUCTIONS_KEY</string>
+    <string name="rec_lap_show_instructions_pref_title">Mostrar Instrucciones</string>
+    <string name="rec_lap_show_instructions_pref_summary">Mostrar las instrucciones para dar una vuelta de reconocimiento al circuito</string>
+    <string name="rec_lap_race_pref_circuit">Circuito</string>
+    <string name="rec_lap_pref_circuit_threshold_margin_key">REC_LAP_RACE_THRESHOLD_MARGIN_KEY</string>
+    <string name="rec_lap_pref_circuit_threshold_margin_title">Añadir margen para referencia Wifi</string>
+    <string name="rec_lap_pref_circuit_threshold_margin_summary">Establecer un margen adicional para el valor de referencia Wifi utilizado para detectar el paso por meta</string>
+    <string name="rec_lap_instructions_title"><u>INSTRUCCIONES</u></string>
+    <string name="rec_lap_instructions_one">1. Situar el vehículo en la línea de salida</string>
+    <string name="rec_lap_instructions_two">2. Pulsar el botón INICIO y esperar a que la cuenta atrás finalice</string>
+    <string name="rec_lap_instructions_three">3. Dar una vuelta completa al circuito</string>
+    <string name="rec_lap_instructions_four">4. Pulsar el botón FIN cuando el vehículo haya cruzado la línea de meta</string>
+    <string name="rec_lap_vehicle_details">Info del Vehículo</string>
+    <string name="rec_lap_vehicle_name">Nombre</string>
+    <string name="rec_lap_vehicle_ip_address">Dirección IP</string>
+    <string name="rec_lap_vehicle_wifi_strength">Señal Wifi (dBm)</string>
+    <string name="rec_lap_vehicle_wifi_strength_val">----</string>
+    <string name="rec_lap_vehicle_wifi_stregth_chart">Gráfica de Señal Wifi del Vehículo</string>
+    <string name="rec_lap_skip_dialog_title">Omitir Vuelta de Reconocimiento</string>
+    <string name="rec_lap_skip_dialog_message">
+        Existen datos previos de vuelta de reconocimiento para el circuito seleccionado, por lo que se puede omitir este paso y proceder
+        directamente a disputar la carrera. No obstante, se recomienda realizar una vuelta de reconocimiento por cada nueva carrera.
+        ¿Desea omitir la vuelta de reconocimiento?
+    </string>
+    <string name="rec_lap_countdown_number">3</string>
+
+    <string name="vehicle_comm_error_dialog_title">Fallo de comunicación con vehículo</string>
+    <string name="vehicle_comm_error_dialog_message">
+        Demasiados fallos de comunicación con el vehículo. por favor, verifique que el módulo RCTELEMETRY instalado en el vehículo se
+        encuentra encendido e inténtelo de nuevo.
+    </string>
+
+    <string name="circuits_not_available_error_message">No existen circuitos almacenados</string>
+    <string name="circuit_not_enough_data_pattern_error_dialog_title">Fallo en generación de patrón en Circuito</string>
+    <string name="circuit_not_enough_data_pattern_error_dialog_message">
+        No hay suficientes datos desde el módulo RCTELEMETRY instalado en el vehículo para establecer un patrón de detección de paso por meta.
+        Por favor, intente repetir la vuelta de reconocimiento.
+    </string>
+    <string name="circuit_not_enough_data_finish_detection_dialog_title">Paso por meta no detectado</string>
+    <string name="circuit_not_enough_data_finish_detection_dialog_message">
+        No hay suficientes datos procedentes del módulo RCTELEMETRY instalado en el vehículo para detección de paso por meta.
+        Por favor, intente repetir la vuelta de reconocimiento
+    </string>
+
+    <string name="run_race_title">Disputar Carrera</string>
+    <string name="run_race_vehicle_info">Info Vehículo</string>
+    <string name="run_race_vehicle_strength">Señal Wifi(dBm)</string>
+    <string name="run_race_vehicle_strength_val">-00.0</string>
+    <string name="run_race_vehicle_threshold">Límite Wifi</string>
+    <string name="run_race_vehicle_strength_ref_val">[-00.0]</string>
+    <string name="run_race_vehicle_above_threshold_count">Contador sobre límite</string>
+    <string name="run_race_vehicle_above_threshold_count_val">0</string>
+    <string name="run_race_vehicle_above_threshold_count_ref_val">[0]</string>
+    <string name="run_race_lap_times">Tiempos de vuelta</string>
+    <string name="run_race_lap_number">1</string>
+    <string name="run_race_lap_time">00:00.0</string>
+    <string name="run_race_lap_time_diff">+0.0</string>
+    <string name="run_race_no_lap_detected_error_title">No se detectó ninguna vuelta</string>
+    <string name="run_race_no_lap_detected_error_message">
+        La carrera no será guardada porque no se ha detectado ninguna vuelta. Debe detectarse al menos una vuelta para considerar la carrera como válida.
+        ¿Desea cancelar la carrera actual?
+    </string>
+    <string name="run_race_pref">Ajustes</string>
+    <string name="run_race_pref_activity_title">Preferencias Disputar Carrera</string>
+    <string name="run_race_pref_vehicle">Vehicle</string>
+    <string name="run_race_pref_vehicle_show_info_pref_key">RUN_RACE_SHOW_VEHICLE_INFO_KEY</string>
+    <string name="run_race_pref_vehicle_show_info_pref_title">Mostrar Info Vehículo</string>
+    <string name="run_race_pref_vehicle_show_info_pref_summary">Mostrar la información proporcionada por el vehículo para la detección de vueltas al circuito</string>
+
+    <string name="race_details_title">Carrera en Detalle</string>
+    <string name="race_details_circuit">Circuito</string>
+    <string name="race_details_circuit_name">Nombre de Circuito</string>
+    <string name="race_details_driver">Conductor</string>
+    <string name="race_details_driver_name">Nombre de Conductor</string>
+    <string name="race_details_vehicle">Vehículo</string>
+    <string name="race_details_vehicle_name">Nombre de Vehículo</string>
+    <string name="race_details_race_time">Tiempo de Carrera</string>
+    <string name="race_details_best_lap">Mejor Vuelta</string>
+    <string name="race_details_best_lap_vel">000.0</string>
+    <string name="race_details_best_lap_vel_unit">km/h</string>
+    <string name="race_details_lap_times">Tiempos por Vuelta</string>
+    <string name="race_details_lap_number_format">1</string>
+    <string name="race_details_race_time_format">00:00.0</string>
+    <string name="race_details_back_press_disabled">Acción de volver hacia atrás deshabilitada!!!</string>
+    <string name="race_details_delete_dialog_title">Eliminar Carrera</string>
+    <string name="race_details_delete_message">¿Está seguro de que quiere eliminar esta carrera?</string>
+
+    <string name="circuit_details_title">Circuito en Detalle</string>
+    <string name="circuit_details_name">Nombre de Circuito</string>
+    <string name="circuit_details_city">Ciudad de Circuito</string>
+    <string name="circuit_details_lenght">Longitud aproximada de circuito (metros)</string>
+    <string name="circuit_details_provide_name">Debe proporcionar un nombre de circuito</string>
+    <string name="circuit_details_lenght_must_be_numeric">La longitud del circuito debe ser numérico</string>
+    <string name="circuit_details_delete_dialog_title">Eliminar Circuito</string>
+    <string name="circuit_details_delete_message">
+        El Circuito y todas sus carreras asociadas serán eliminados.
+        ¿Está seguro de querer eliminar este circuito forma definitiva?
+    </string>
+    <string name="circuit_details_coarse_location_permission_title">Se requiere permiso de ubicación aproximada"</string>
+    <string name="circuit_details_coarse_location_permission_message">
+        Este permiso se utiliza para rellenar el campo relativo a la Ciudad del circuito con la opción más cercana a la ubicación actual.
+        Si se deniega este permiso, este campo deberá ser rellenado de forma manual.
+    </string>
+    <string name="circuit_details_city_not_located">No se pudo obtener una Ciudad para la localización actual</string>
+
+</resources>

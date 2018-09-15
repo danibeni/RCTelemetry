@@ -9,3 +9,5 @@ val Long.asTimeString get() = "%tT".format(this)
 val Long.asDateString get() = "%tF".format(this)
 
 val Float.asTimeMs get() = toLong() * 1000
+
+val Long.asTimeSec get() = toDouble()/1000

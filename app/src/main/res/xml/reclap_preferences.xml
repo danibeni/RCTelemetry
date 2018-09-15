@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/rec_lap_pref_instructions">
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/rec_lap_show_instructions_pref_key"
+            android:summary="@string/rec_lap_show_instructions_pref_summary"
+            android:title="@string/rec_lap_show_instructions_pref_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/rec_lap_pref_circuit">
+        <EditTextPreference
+            android:key="@string/rec_lap_pref_circuit_threshold_margin_key"
+            android:summary="@string/rec_lap_pref_circuit_threshold_margin_summary"
+            android:title="@string/rec_lap_pref_circuit_threshold_margin_title" />
+    </PreferenceCategory>
+</PreferenceScreen>

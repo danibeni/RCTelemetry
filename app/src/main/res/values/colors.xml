@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#c10420</color>
+        <color name="colorPrimary">#c10420</color>
     <color name="colorPrimaryDark">#7f1a18</color>
     <color name="colorAccent">#c10420</color>
     <color name="colorBackground">#ffffff</color>
@@ -8,14 +8,19 @@
     <color name="colorSecondary">#ffffff</color>
     <color name="colorTextPrimary">#000000</color>
     <color name="colorTextSecondary">#ffffff</color>
+    <color name="colorTextToolbarPrimary">#000000</color>
+    <color name="colorTextToolbarSecondary">#ffffff</color>
     <color name="colorIcon">#ffffff</color>
     <color name="colorTextIcon">#ffffff</color>
     <color name="colorTextBlink">#0b9f0b</color>
+    <color name="colorTextSelected">#0b9f0b</color>
     <color name="colorTextError">#ff0000</color>
-    <color name="colorError">#ff0000</color>
     <color name="colorGraphOne">#ffa200</color>
+    <color name="colorOK">#41f705</color>
+    <color name="colorWarning">#fbef04</color>
+    <color name="colorError">#ff0000</color>
 
-    <color name="translucentBackground">#ED000000</color>
+    <color name="translucentBackground">#EDFFFFFF</color>
 
     <drawable name="touchFeedback">#CFD8DC</drawable>
 </resources>

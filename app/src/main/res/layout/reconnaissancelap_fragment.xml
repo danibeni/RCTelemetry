@@ -1,85 +1,265 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/recLapFL"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/recLapCL"
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/recLapCoordLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <Chronometer
-            android:id="@+id/recLapChrono"
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/recLapCL"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:gravity="center"
-            android:textAppearance="@style/Chronometer"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="match_parent">
 
-        <com.jjoe64.graphview.GraphView
-            android:id="@+id/vehicleSignalGV"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recLapChrono" />
+            <TextView
+                android:id="@+id/recLabChronometerLbl"
+                style="@style/SectionTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/chronometer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <FrameLayout
-            android:id="@+id/recLapButtonsFL"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/vehicleSignalGV">
+            <View
+                android:id="@+id/recLabChronometerLine"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recLabChronometerLbl" />
 
-            <Button
-                android:id="@+id/recLapStartButton"
-                android:layout_width="100dp"
+            <es.danibeni.android.kotlin.rctelemetry.core.platform.Chronometer
+                android:id="@+id/recLapChrono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:textAppearance="@style/Chronometer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recLabChronometerLbl" />
+
+            <FrameLayout
+                android:id="@+id/recLapButtonsFL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recLapChrono">
+
+                <Button
+                    android:id="@+id/recLapStartButton"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/shape_start_button"
+                    android:drawableTop="@drawable/ic_start"
+                    android:paddingTop="0dp"
+                    android:text="@string/rec_lap_start"
+                    android:textColor="@color/colorTextIcon"
+                    android:visibility="visible" />
+
+                <Button
+                    android:id="@+id/recLapStopButton"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/shape_stop_button"
+                    android:drawableTop="@drawable/ic_stop"
+                    android:paddingTop="0dp"
+                    android:text="@string/rec_lap_stop"
+                    android:textColor="@color/colorTextIcon"
+                    android:visibility="invisible" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/recLapVehicleDetailsLbl"
+                style="@style/SectionTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/rec_lap_vehicle_details"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recLapButtonsFL" />
+
+            <View
+                android:id="@+id/recLabVehicleDetailsLine"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recLapVehicleDetailsLbl" />
+
+            <TextView
+                android:id="@+id/recLapVehicleNameLbl"
+                style="@style/SectionLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/rec_lap_vehicle_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recLapVehicleDetailsLbl" />
+
+            <TextView
+                android:id="@+id/recLapVehicleNameVal"
+                style="@style/SectionValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                 app:layout_constraintBottom_toBottomOf="@+id/recLapVehicleNameLbl"
+                app:layout_constraintStart_toEndOf="@+id/recLapVehicleNameLbl"
+                app:layout_constraintTop_toBottomOf="@+id/recLapVehicleDetailsLbl" />
+
+            <TextView
+                android:id="@+id/recLapVehicleIPAddressLbl"
+                style="@style/SectionLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/rec_lap_vehicle_ip_address"
+                app:layout_constraintStart_toStartOf="@+id/recLapVehicleNameLbl"
+                app:layout_constraintTop_toBottomOf="@+id/recLapVehicleNameLbl" />
+
+            <TextView
+                android:id="@+id/recLapVehicleIPAddressVal"
+                style="@style/SectionValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/recLapVehicleIPAddressLbl"
+                app:layout_constraintStart_toEndOf="@+id/recLapVehicleIPAddressLbl"
+                app:layout_constraintTop_toBottomOf="@+id/recLapVehicleNameLbl" />
+
+            <TextView
+                android:id="@+id/recLapVehicleWifiStrengthLbl"
+                style="@style/SectionLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/rec_lap_vehicle_wifi_strength"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recLapVehicleIPAddressLbl" />
+
+            <TextView
+                android:id="@+id/recLapVehicleWifiStrengthVal"
+                style="@style/SectionValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/rec_lap_vehicle_wifi_strength_val"
+                app:layout_constraintBottom_toBottomOf="@+id/recLapVehicleWifiStrengthLbl"
+                app:layout_constraintStart_toEndOf="@+id/recLapVehicleWifiStrengthLbl"
+                app:layout_constraintTop_toBottomOf="@+id/recLapVehicleIPAddressLbl" />
+
+            <TextView
+                android:id="@+id/recLapCircuitThresholdLbl"
+                style="@style/SectionLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/rec_lap_circuit_threshold"
+                app:layout_constraintStart_toEndOf="@+id/recLapVehicleWifiStrengthVal"
+                app:layout_constraintTop_toBottomOf="@+id/recLapVehicleIPAddressLbl" />
+
+            <TextView
+                android:id="@+id/recLapCircuitThresholdVal"
+                style="@style/SectionValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/rec_lap_circuit_threshold_val"
+                app:layout_constraintBottom_toBottomOf="@+id/recLapCircuitThresholdLbl"
+                app:layout_constraintStart_toEndOf="@+id/recLapCircuitThresholdLbl"
+                app:layout_constraintTop_toBottomOf="@+id/recLapVehicleIPAddressLbl" />
+
+            <TextView
+                android:id="@+id/recLapVehicleWifiStrengthChartLbl"
+                style="@style/SectionTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/rec_lap_vehicle_wifi_stregth_chart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recLapVehicleWifiStrengthLbl" />
+
+            <View
+                android:id="@+id/recLabVehicleWifiStrengthLine"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recLapVehicleWifiStrengthChartLbl" />
+
+            <com.jjoe64.graphview.GraphView
+                android:id="@+id/recLapVehicleWifiStrengthGV"
+                android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:background="@drawable/shape_start_button"
-                android:drawableTop="@drawable/ic_start"
-                android:paddingTop="0dp"
-                android:text="@string/rec_lap_start"
-                android:textColor="@color/colorTextIcon"
-                android:visibility="visible" />
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recLapVehicleWifiStrengthChartLbl" />
+        </android.support.constraint.ConstraintLayout>
 
-            <Button
-                android:id="@+id/recLapStopButton"
-                android:layout_width="100dp"
-                android:layout_height="102dp"
-                android:layout_gravity="center"
-                android:background="@drawable/shape_stop_button"
-                android:drawableTop="@drawable/ic_stop"
-                android:paddingTop="0dp"
-                android:text="@string/rec_lap_stop"
-                android:textColor="@color/colorTextIcon"
-                android:visibility="invisible" />
-        </FrameLayout>
-
-    </android.support.constraint.ConstraintLayout>
+        <Button
+            android:id="@+id/recLapNextButton"
+            style="@style/BaseButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:drawableEnd="@drawable/ic_next"
+            android:text="@string/action_next"
+            android:visibility="invisible" />
+    </android.support.design.widget.CoordinatorLayout>
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/reclapInstructionCL"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorBackgroundTransp"
+        android:background="@color/translucentBackground"
         android:visibility="gone">
 
         <TextView
@@ -142,7 +322,7 @@
 
         <Button
             android:id="@+id/recLapInstructOKButton"
-            style="@style/BaseButton"
+            style="@style/BaseButtonDark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -152,6 +332,30 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/reclapInstrucLL" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/recLapCountDownCL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/translucentBackground"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/recLapCountDown"
+            style="@style/Countdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/rec_lap_countdown_number"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
 </FrameLayout>

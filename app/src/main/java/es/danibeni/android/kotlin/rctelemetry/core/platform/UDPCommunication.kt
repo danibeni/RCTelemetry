@@ -15,7 +15,7 @@ open class UDPCommunication(host: String, port: Int) {
 
     init {
         this.isAccesible = true
-        this.timeout = 6000
+        this.timeout = 300
         this.host = host
         this.port = port
         try {
@@ -33,7 +33,7 @@ open class UDPCommunication(host: String, port: Int) {
 
     fun sendMessage(message: String) {
         val buf = message.toByteArray()
-        var inetAddress: InetAddress? = null
+        val inetAddress: InetAddress?
         if (this.isAccesible) {
             try {
                 inetAddress = InetAddress.getByName(host)

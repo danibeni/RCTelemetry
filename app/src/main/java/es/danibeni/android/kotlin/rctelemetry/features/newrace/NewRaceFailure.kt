@@ -5,4 +5,6 @@ import es.danibeni.android.kotlin.rctelemetry.core.exception.Failure.FeatureFail
 class NewRaceFailure {
     class VehiculeCommunicationFailure() : FeatureFailure()
     class NoVehiclesFound : FeatureFailure()
+    class BadResponseFromVehicle() : FeatureFailure()
+    class NoLapDetected: FeatureFailure()
 }
